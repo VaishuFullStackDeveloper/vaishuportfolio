@@ -1,196 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic HTML setup -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vaishali's Portfolio</title>
 
-  <!-- Linking external CSS -->
-  <link rel="stylesheet" href="./src/MyProjects/css_projects/index.css"/>
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="./src/MyProjects/css_projects/index.css" />
 
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- ✅ Font Awesome (fixed link) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
 </head>
-
-<!-- Hamburger menu toggle script -->
-<script>
-  const hamburger = document.getElementById("hamburger");
-  const navbar = document.getElementById("navbar");
-
-  hamburger.addEventListener("click", () => {
-    navbar.classList.toggle("active");
-  });
-</script>
 
 <body>
 
-  <!-- ===== Header Section ===== -->
-  <header id="header">
-    <div class="logo">MyPortfolio</div>
-
-    <!-- Navigation menu -->
-    <nav class="navbar" id="navbar">
-      <a href="#home">Home</a>
+  <header>
+    <div class="logo">Vaishali</div>
+    <nav id="nav-menu">
+      <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#services">Services</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
-
-    <!-- Hamburger icon for mobile view -->
-    <div class="hamburger" id="hamburger">&#9776;</div>
+    <div class="hamburger" id="hamburger-btn">
+      <i class="fas fa-bars"></i>
+    </div>
   </header>
 
-  <!-- ===== Home Section ===== -->
-  <section id="home" class="section home-section">
-    <h1>Hi, I'm <span class="highlight">Vaishali</span></h1>
+  <!-- Home Section -->
+  <section id="home">
+    <h1>Hello, I'm Vaishali</h1>
     <h2>Full Stack Developer</h2>
-    <p>I love building modern web apps using React, Node.js, JavaScript.</p>
-    <a href="./src/MyProjects/css_projects/resume.html" class="btn">Download Resume</a>
+    <p>I am a passionate and hard-working full stack developer with skills in HTML, CSS, JavaScript, React, Node.js, and more. I love building beautiful, responsive websites and web apps.</p>
+    <a href="#contact" class="btn">Resume</a>
 
-    <!-- Social media links -->
-    <div class="social-links">
+    <div class="social-links" style="margin-top: 3rem;">
+      <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am Vaishali, a dedicated and enthusiastic full stack developer. I enjoy crafting clean and efficient code, continuously learning new technologies, and collaborating on projects that make a difference.</p>
+    <p>My expertise spans front-end frameworks like React, back-end development with Node.js and Express, and database management using MongoDB and SQL.</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-name">HTML</div>
+        <div class="progress-bar">
+          <div class="progress" style="--progress-width: 90%; animation-delay: 0.1s;"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">CSS</div>
+        <div class="progress-bar">
+          <div class="progress" style="--progress-width: 85%; animation-delay: 0.3s;"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">JavaScript</div>
+        <div class="progress-bar">
+          <div class="progress" style="--progress-width: 80%; animation-delay: 0.5s;"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">React.js</div>
+        <div class="progress-bar">
+          <div class="progress" style="--progress-width: 75%; animation-delay: 0.7s;"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">Node.js</div>
+        <div class="progress-bar">
+          <div class="progress" style="--progress-width: 70%; animation-delay: 0.9s;"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">MongoDB</div>
+        <div class="progress-bar">
+          <div class="progress" style="--progress-width: 65%; animation-delay: 1.1s;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-code"></i></div>
+        <div class="service-title">Web Development</div>
+        <div class="service-desc">Building responsive and dynamic websites using modern technologies like React, Node.js, and more.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+        <div class="service-title">UI/UX Design</div>
+        <div class="service-desc">Designing intuitive user interfaces with a focus on user experience and accessibility.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-database"></i></div>
+        <div class="service-title">Database Management</div>
+        <div class="service-desc">Efficient data storage solutions with MongoDB and SQL databases.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    
+    <div class="project-card">
+      <h3>HTML Project</h3>
+      <p>A simple and well-structured web page built using only HTML to demonstrate semantic layout and content organization.</p>
+      <div class="project-links">
+        <a href="./src/MyProjects/html_projects/homepage.html" target="_blank">View Project</a>
+       
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>CSS Project</h3>
+      <p>A stylish landing page designed using advanced CSS techniques including Flexbox, Grid, animations, and transitions.</p>
+      <div class="project-links">
+        <a href="./src/MyProjects/css_projects/homepage.html" target="_blank">View Project</a>
+       
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>JavaScript Project</h3>
+      <p>An interactive web application featuring DOM manipulation, event handling, and form validation using JavaScript.</p>
+      <div class="project-links">
+        <a href="./src/MyProjects/javascript_projects/homepage.html" target="_blank">View Project</a>
+       
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Test Cases</h3>
+      <p>A project documenting test cases to verify the correctness and quality of software features and functions..</p>
+      <div class="project-links">
+        <a href="./src/MyProjects/testcases_projects/homepage.html" target="_blank">View Project</a>
+       
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Bootstrap Project</h3>
+      <p>A modern, responsive website created using Bootstrap components and grid system for a mobile-friendly experience.</p>
+      <div class="project-links">
+        <a href="https://yourdomain.com/bootstrap-project" target="_blank">View Project</a>
+       
+      </div>
+    </div>
+
+  </div>
+</section>
+  
+
+<!-- Contact Section -->
+<section id="contact">
+  <div class="container">
+    <h2>Contact Me</h2>
+     
+    <div class="contact-icons">
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
       <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
         <i class="fab fa-github"></i>
       </a>
-      <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
+      <a href="tel:+1234567890" aria-label="Call">
+        <i class="fas fa-phone"></i>
+      </a>
+      <a href="sms:+1234567890" aria-label="Message">
+        <i class="fas fa-sms"></i>
       </a>
       <a href="skype:your.skype.id?chat" target="_blank" aria-label="Skype">
         <i class="fab fa-skype"></i>
       </a>
     </div>
-  </section>
 
-  <!-- ===== About & Skills Section ===== -->
-  <section id="about" class="about-skills-section">
+   
+  </div>
+</section>
 
-    <!-- About box -->
-    <div class="about-box">
-      <h2>About Me</h2>
-      <p>
-        I am a passionate full stack developer, currently pursuing my final year of BSc.
-        I love building responsive websites and learning new technologies.
-      </p>
-      <p>
-        I aim to continuously grow my skills and contribute meaningfully to real-world projects.
-      </p>
-    </div>
 
-    <!-- Skills box -->
-    <div class="skills-box">
-      <h2>My Skills</h2>
 
-      <!-- Skill bars -->
-      <div class="skill">
-        <span>HTML</span>
-        <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
-      </div>
-      <div class="skill">
-        <span>CSS</span>
-        <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
-      </div>
-      <div class="skill">
-        <span>JavaScript</span>
-        <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
-      </div>
-      <div class="skill">
-        <span>React</span>
-        <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
-      </div>
-      <div class="skill">
-        <span>Node.js</span>
-        <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ===== Projects Section ===== -->
-  <section id="projects" class="simple-projects">
-    <h2>My Projects</h2>
-    <div class="project-grid">
+  <script>
+    // Hamburger toggle
+    const hamburger = document.getElementById('hamburger-btn');
+    const navMenu = document.getElementById('nav-menu');
 
-      <!-- Individual project cards -->
-      <div class="project-card">
-        <h3>HTML Projects</h3>
-        <p>Basic and intermediate level HTML-based projects.</p>
-        <div class="project-links">
-          <a href="./src/MyProjects/html_projects/homepage.html" target="_blank">View Project</a>
-        </div>
-      </div>
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
 
-      <div class="project-card">
-        <h3>CSS Projects</h3>
-        <p>Stylish websites built with pure CSS and Flexbox/Grid.</p>
-        <div class="project-links">
-          <a href="./src/MyProjects/css_projects/homepage.html" target="_blank">View Project</a>
-        </div>
-      </div>
+    // Close menu on link click (mobile)
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
 
-      <div class="project-card">
-        <h3>JavaScript Projects</h3>
-        <p>Dynamic apps using DOM, events, and APIs.</p>
-        <div class="project-links">
-          <a href="./src/MyProjects/javascript_projects/homepage.html" target="_blank">View Project</a>
-        </div>
-      </div>
+    // Highlight active nav link on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
 
-      <div class="project-card">
-        <h3>Bootstrap Projects</h3>
-        <p>Responsive designs using Bootstrap 5 components.</p>
-        <div class="project-links">
-          <a href="./src/MyProjects/boostrap_projects/homepage.html" target="_blank">View Project</a>
-        </div>
-      </div>
+    window.addEventListener('scroll', () => {
+      let current = '';
 
-      <div class="project-card">
-        <h3>Test Case Projects</h3>
-        <p>Manual and automated test case-based mini apps.</p>
-        <div class="project-links">
-          <a href="./src/MyProjects/testcases_projects/homepage.html" target="_blank">View Project</a>
-        </div>
-      </div>
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 70;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
 
-      <div class="project-card">
-        <h3>React Projects</h3>
-        <p>Creative and experimental projects from various tech stacks.</p>
-        <div class="project-links">
-          <a href="./src/MyProjects/" target="_blank">View Project</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== Contact Section ===== -->
-  <section id="contact" class="contact-section">
-    <h2>Contact Me</h2>
-    <div class="contact-details">
-      <p>If you'd like to connect, you can find me here:</p>
-
-      <!-- Contact links -->
-      <div class="contact-item">
-        <a href="https://www.linkedin.com/in/your-profile" target="_blank">
-          <i class="fab fa-linkedin contact-icon"></i> LinkedIn
-        </a>
-      </div>
-
-      <div class="contact-item">
-        <a href="https://github.com/your-username" target="_blank">
-          <i class="fab fa-github contact-icon"></i> GitHub
-        </a>
-      </div>
-
-      <div class="contact-item">
-        <a href="skype:live:your-skype-id?chat" target="_blank">
-          <i class="fab fa-skype contact-icon"></i> Skype
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Optional JavaScript file  -->
-  <script src="script.js"></script>
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
