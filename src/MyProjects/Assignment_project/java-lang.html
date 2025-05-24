@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Java Programs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      color: #333;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .fixed-home {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      padding: 0.6rem 1.2rem;
+      background-color: #0d3b66;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      z-index: 999;
+      transition: background-color 0.3s ease;
+    }
+
+    .fixed-home:hover {
+      background-color: #144272;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      color: #0d3b66;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #144272;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      flex: 1 1 45%;
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .code-box {
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      font-family: "Courier New", monospace;
+      font-size: 0.95rem;
+      white-space: pre-wrap;
+    }
+
+    .input-output {
+      background-color: #f9f9f9;
+      border-left: 5px solid #2a9d8f;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #264653;
+    }
+
+    .input-box {
+      background-color: #f9f9f9;
+      border-left: 5px solid #e9c46a;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #264653;
+    }
+
+    @media (max-width: 768px) {
+      .card-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Fixed Home Button -->
+  <a class="fixed-home" href="./Homepage.html">
+    <i class="fas fa-home"></i> Home
+  </a>
+
+  <div class="container">
+    <h1>Java Programs</h1>
+
+    <!-- Row 1: Even or Odd -->
+    <div class="card-row">
+      <div class="card">
+        <h2>Even or Odd</h2>
+        <div class="code-box">
+<code>
+public class EvenOddChecker {
+    public static void main(String[] args) {
+        int number = 7;
+
+        if (number % 2 == 0) {
+            System.out.println(number + " is even.");
+        } else {
+            System.out.println(number + " is odd.");
+        }
+    }
+}
+</code>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Input</h2>
+        <div class="input-box">
+          Number: 7
+        </div>
+        <h2>Output</h2>
+        <div class="input-output">
+          7 is odd.
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Largest of Two Numbers -->
+    <div class="card-row">
+      <div class="card">
+        <h2>Largest of Two Numbers</h2>
+        <div class="code-box">
+<code>
+public class LargestNumber {
+    public static void main(String[] args) {
+        int a = 10, b = 25;
+
+        if (a > b) {
+            System.out.println(a + " is larger.");
+        } else {
+            System.out.println(b + " is larger.");
+        }
+    }
+}
+</code>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Input</h2>
+        <div class="input-box">
+          a = 10, b = 25
+        </div>
+        <h2>Output</h2>
+        <div class="input-output">
+          25 is larger.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

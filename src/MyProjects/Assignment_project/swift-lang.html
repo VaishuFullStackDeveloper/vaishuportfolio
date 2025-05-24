@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Swift Programs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      color: #333;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      color: #0d3b66;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #144272;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      flex: 1 1 45%;
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .code-box {
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      font-family: "Courier New", monospace;
+      font-size: 0.95rem;
+      white-space: pre-wrap;
+    }
+
+    .input-output {
+      background-color: #f9f9f9;
+      border-left: 5px solid #2a9d8f;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #264653;
+    }
+
+    .input-box {
+      background-color: #f9f9f9;
+      border-left: 5px solid #e9c46a;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #264653;
+    }
+
+    @media (max-width: 768px) {
+      .card-row {
+        flex-direction: column;
+      }
+    }
+
+    /* Fixed Home Button Styling */
+    .fixed-home {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #0d3b66;
+      color: white;
+      text-decoration: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 10px;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+
+    .fixed-home:hover {
+      background-color: #144272;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Fixed Home Button with Icon -->
+  <a class="fixed-home" href="./Homepage.html">
+    <i class="fas fa-home"></i> Home
+  </a>
+
+  <div class="container">
+    <h1>Swift Programs</h1>
+
+    <!-- Row 1: Addition -->
+    <div class="card-row">
+      <div class="card">
+        <h2>Add Two Numbers</h2>
+        <div class="code-box">
+          <code>
+            import Foundation
+            let a = 5
+            let b = 3
+            let sum = a + b
+            print("Sum is: \(sum)")
+            
+          </code>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Input</h2>
+        <div class="input-box">
+          a = 5, b = 3
+        </div>
+        <h2>Output</h2>
+        <div class="input-output">
+          Sum is: 8
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Even or Odd -->
+    <div class="card-row">
+      <div class="card">
+        <h2>Even or Odd</h2>
+        <div class="code-box">
+          <code>
+  import Foundation
+   let num = 4
+    if num % 2 == 0 {
+    print("\(num) is even")
+     } else {
+    print("\(num) is odd")
+  }
+          </code>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Input</h2>
+        <div class="input-box">
+          num = 4
+        </div>
+        <h2>Output</h2>
+        <div class="input-output">
+          4 is even
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

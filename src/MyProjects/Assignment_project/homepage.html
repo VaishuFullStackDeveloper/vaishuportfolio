@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Input & Output Languages</title>
+
+  <style>
+    /* Reset some default spacing and set base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      text-align: center;
+    }
+
+    /* Header styling */
+    header {
+      padding: 30px;
+      background-color: #3a86ff;
+      color: white;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    header h1 {
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    header p {
+      font-size: 18px;
+      opacity: 0.8;
+    }
+
+     /* home logo */
+    .home-icon {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+}
+.home-icon img {
+  width: 32px;
+  filter: invert(1);
+  transition: transform 0.3s ease;
+}
+.home-icon img:hover {
+  transform: scale(1.1);
+}
+    /* GitHub Logo */
+    .github-logo {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 999;
+    }
+    .github-logo img {
+      width: 35px;
+      filter: invert(1);
+      transition: transform 0.3s ease;
+    }
+    .github-logo img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Main container for cards */
+    .main-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 25px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 20px auto;
+    }
+
+    /* Card design */
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      padding: 25px;
+      text-decoration: none;
+      color: #333;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    /* Image inside each card */
+    .card img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    /* Card hover effect */
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h2 {
+      font-size: 22px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 600px) {
+      .card img {
+        width: 70px;
+        height: 70px;
+      }
+
+      header h1 {
+        font-size: 28px;
+      }
+
+      .card h2 {
+        font-size: 20px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- Page Header -->
+<header>
+  <h1>Logical Input & Output</h1>
+  <p>Select a Programming Language</p>
+</header>
+
+<!-- Main content container -->
+<div class="main-container">
+<!-- home logo -->
+<a href="../../../index.html" class="home-icon">
+  <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home Icon" />
+</a>
+
+
+  <!-- GitHub Logo -->
+  <a href="https://github.com/yourusername" class="github-logo" target="_blank">
+    <img src="https://github.com/VaishuFullStackDeveloper/LogicDevelopment" alt="GitHub Logo" />
+  </a>
+  <!-- C Language Card -->
+  <a href="./c-language.html" class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png" alt="C Language Logo">
+    <h2>C Language</h2>
+  </a>
+
+  <!-- Java Language Card -->
+  <a href="./java-lang.html" class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Java Logo">
+    <h2>Java</h2>
+  </a>
+
+  <!-- Python Language Card -->
+  <a href="./python-lang.html" class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python Logo">
+    <h2>Python</h2>
+  </a>
+
+  <!-- JavaScript Language Card -->
+  <a href="./javascript-lang.html" class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript Logo">
+    <h2>JavaScript</h2>
+  </a>
+<!-- Swift Language Card -->
+<a href="./swift-lang.html" class="card">
+  <img src="https://developer.apple.com/swift/images/swift-og.png" alt="Swift Logo">
+  <h2>Swift</h2>
+</a>
+</div>
+
+</body>
+</html>

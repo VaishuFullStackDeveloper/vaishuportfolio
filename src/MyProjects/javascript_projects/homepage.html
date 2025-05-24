@@ -17,6 +17,21 @@
       background-color: #0F172A;
       color: #F1F5F9;
     }
+  /* home logo */
+    .home-icon {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+}
+.home-icon img {
+  width: 32px;
+  filter: invert(1);
+  transition: transform 0.3s ease;
+}
+.home-icon img:hover {
+  transform: scale(1.1);
+}
 
     /* GitHub Logo */
     .github-logo {
@@ -91,7 +106,7 @@
       padding: 8px 16px;
       border-radius: 6px;
       font-weight: 600;
-      transition: background 0.3s ease;
+      transition: 0.3s ease;
     }
     .project-card a:hover {
       background-color: transparent;
@@ -101,9 +116,13 @@
   </style>
 </head>
 <body>
+  <!-- home logo -->
+<a href="../../../index.html" class="home-icon">
+  <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home Icon" />
+</a>
 
   <!-- GitHub Logo -->
-  <a href="https://github.com/yourusername" class="github-logo" target="_blank">
+  <a href="https://github.com/VaishuFullStackDeveloper/vaishuportfolio" class="github-logo" target="_blank">
     <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" />
   </a>
 

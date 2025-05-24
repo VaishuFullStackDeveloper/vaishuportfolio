@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C Language Programs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* Reset & Fonts */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      color: #333;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    /* Fixed Home Button */
+    .fixed-home {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      padding: 0.6rem 1.2rem;
+      background-color: #0d3b66;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      z-index: 999;
+      transition: background-color 0.3s ease;
+    }
+
+    .fixed-home:hover {
+      background-color: #144272;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Headings */
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      color: #0d3b66;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #144272;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Card Layout */
+    .card-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      flex: 1 1 45%;
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Code Box */
+    .code-box {
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      font-family: "Courier New", monospace;
+      font-size: 0.95rem;
+      white-space: pre-wrap;
+    }
+
+    /* Output Box */
+    .input-output {
+      background-color: #f9f9f9;
+      border-left: 5px solid #2a9d8f;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #264653;
+    }
+
+    /* Input Box */
+    .input-box {
+      background-color: #f9f9f9;
+      border-left: 5px solid #e9c46a;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #264653;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .card-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Fixed Home Button -->
+  <a class="btn fixed-home" href="./homepage.html">
+    <i class="fas fa-home"></i> Home
+  </a>
+
+  <div class="container">
+    <h1>C Language Programs</h1>
+
+    <!-- Row 1: Leap Year -->
+    <div class="card-row">
+      <div class="card">
+        <h2>Code (Terminal Input)</h2>
+        <div class="code-box">
+          <code>
+#include&lt;stdio.h&gt;
+int main() {
+  int year;
+  printf("Enter a year:");
+  scanf("%d", &year);
+
+  (year % 4 == 0 &amp;&amp; year % 100 != 0) || (year % 400 == 0) ? 
+  printf("%d is a leap year.\n", year) : 
+  printf("%d is not a leap year", year);
+
+  return 0;
+}
+          </code>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Input</h2>
+        <div class="input-box">
+          Enter a year: 2024
+        </div>
+        <h2>Output</h2>
+        <div class="input-output">
+          2024 is a leap year.
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Factorial Program -->
+    <div class="card-row">
+      <div class="card">
+        <h2>Code (Factorial)</h2>
+        <div class="code-box">
+          <code>
+#include&lt;stdio.h&gt;
+int main() {
+  int num, i, factorial = 1;
+  printf("Enter a number: ");
+  scanf("%d", &num);
+
+  for(i = 1; i <= num; i++) {
+    factorial *= i;
+  }
+
+  printf("Factorial of %d is %d\n", num, factorial);
+  return 0;
+}
+          </code>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Input</h2>
+        <div class="input-box">
+          Enter a number: 5
+        </div>
+        <h2>Output</h2>
+        <div class="input-output">
+          Factorial of 5 is 120.
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: Prime Number Program -->
+    <div class="card-row">
+      <div class="card">
+        <h2>Code (Prime Number Check)</h2>
+        <div class="code-box">
+          <code>
+#include&lt;stdio.h&gt;
+int main() {
+  int num, i, flag = 0;
+  printf("Enter a number: ");
+  scanf("%d", &num);
+
+  for(i = 2; i <= num/2; i++) {
+    if(num % i == 0) {
+      flag = 1;
+      break;
+    }
+  }
+
+  if(flag == 0)
+    printf("%d is a prime number.\n", num);
+  else
+    printf("%d is not a prime number.\n", num);
+
+  return 0;
+}
+          </code>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Input</h2>
+        <div class="input-box">
+          Enter a number: 7
+        </div>
+        <h2>Output</h2>
+        <div class="input-output">
+          7 is a prime number.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
