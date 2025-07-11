@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vowel & Consonant Checker</title>
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /*body */
+    body {
+      background: url('https://images.unsplash.com/photo-1529243856184-fd5465488984?auto=format&fit=crop&w=1740&q=80') 
+        no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Container for the checker UI */
+    .container {
+      background-color: rgba(255, 255, 255, 0.85); /* Slight transparency */
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    /* Heading style */
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* Input field styling */
+    input {
+      padding: 10px;
+      font-size: 18px;
+      width: 80%;
+      border-radius: 8px;
+      border: 1px solid #aaa;
+      margin-bottom: 20px;
+    }
+
+    /* Button style */
+    button {
+      padding: 10px 25px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    /* Hover effect for button */
+    button:hover {
+      background-color: #45a049;
+    }
+
+    /* Output result styling */
+    .result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main UI container -->
+  <div class="container">
+    <h2>Vowel or Consonant Checker</h2>
+    
+    <!-- Input for single character -->
+    <input type="text" id="charInput" maxlength="1" placeholder="Enter a letter">
+    <br>
+
+    <!-- Button to trigger check -->
+    <button onclick="checkCharacter()">Check</button>
+
+    <!-- Result display area -->
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    // Function to check 
+    function checkCharacter() {
+     
+      const char = document.getElementById("charInput").value.toLowerCase();
+      const result = document.getElementById("result");
+
+      // Validate input
+      if (!char.match(/[a-z]/i)) {
+        result.innerText = "Please enter a valid letter (A-Z).";
+        return;
+      }
+
+      // Check if the character is a vowel
+      if ("aeiou".includes(char)) {
+        result.innerText = `"${char}" is a Vowel.`;
+      } else {
+        result.innerText = `"${char}" is a Consonant.`;
+      }
+    }
+  </script>
+
+</body>
+</html>
+<!--  -->

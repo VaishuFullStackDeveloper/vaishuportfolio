@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynamic Brick Wall UI</title>
+  <style>
+    /* ===== Reset and Base Styles ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url("https://images.unsplash.com/photo-1503264116251-35a269479413") no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 900px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background-color: #00ffc8;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #00cc9f;
+    }
+
+    .brick-wall {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .brick {
+      width: 200px;
+      height: 120px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      position: relative;
+      animation: popIn 0.3s ease-in-out;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    .brick::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, #00ffc8, #00cc9f);
+      border-top-left-radius: 12px;
+      border-bottom-left-radius: 12px;
+    }
+
+    .remove-btn {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      color: red;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .brick {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Brick Box UI</h1>
+    <div class="controls">
+      <button class="btn" onclick="addBrick()">➕ Add Brick</button>
+      <button class="btn" onclick="removeAllBricks()">🧹 Clear All</button>
+    </div>
+    <div class="brick-wall" id="brickWall">
+      <!-- Bricks appear here -->
+    </div>
+  </div>
+
+  <script>
+    let count = 1;
+
+    // Function to add a brick
+    function addBrick() {
+      const brickWall = document.getElementById("brickWall");
+
+      const brick = document.createElement("div");
+      brick.className = "brick";
+      brick.innerHTML = `
+        Brick ${count++}
+        <button class="remove-btn" onclick="removeBrick(this)">×</button>
+      `;
+
+      brickWall.appendChild(brick);
+    }
+
+    // Function to remove individual brick
+    function removeBrick(button) {
+      const brick = button.parentElement;
+      brick.remove();
+    }
+
+    // Remove all bricks
+    function removeAllBricks() {
+      document.getElementById("brickWall").innerHTML = "";
+      count = 1;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,114 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electric Bill Calculator</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Electric Bill Calculator</title>
+  <style>
     body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(to right, #b2c8cb, #f1c6c6); 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-.container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 300px;
-}
+    .container {
+      background-color: #ffffff;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      width: 320px;
+      text-align: center;
+    }
 
-h1 {
-    color: #333;
-}
+    h1 {
+      color: #00796b;
+    }
 
-form {
-    margin-bottom: 20px;
-}
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-size: 16px;
+      color: #333;
+    }
 
-label {
-    font-size: 16px;
-    margin-bottom: 8px;
-    display: block;
-}
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
 
-input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 12px;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-}
+    button:hover {
+      background-color: #004d40;
+    }
 
-button:hover {
-    background-color: #45a049;
-}
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #444;
+    }
 
-#result {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 20px;
-}
+    #bill-amount {
+      color: #e91e63;
+    }
+  </style>
+</head>
 
-</style>
-<script>
+<body>
+  <div class="container">
+    <h1>Electric Bill Calculator</h1>
+    <form id="bill-form">
+      <label for="units">Enter Units Consumed:</label>
+      <input type="number" id="units" name="units" required />
+
+      <button type="button" onclick="calculateBill()">Calculate Bill</button>
+    </form>
+
+    <div id="result">
+      <p>Total Bill: ₹<span id="bill-amount">0</span></p>
+    </div>
+  </div>
+
+  <script>
     function calculateBill() {
-    const units = document.getElementById('units').value;
-    let billAmount = 0;
+      const units = parseInt(document.getElementById('units').value);
+      let billAmount = 0;
 
-    if (units <= 0) {
+      if (!units || units <= 0) {
         alert("Please enter a valid number of units.");
         return;
+      }
+
+      if (units <= 100) {
+        billAmount = units * 5;
+      } else if (units <= 300) {
+        billAmount = 100 * 5 + (units - 100) * 7;
+      } else {
+        billAmount = 100 * 5 + 200 * 7 + (units - 300) * 10;
+      }
+
+      document.getElementById('bill-amount').textContent = billAmount.toFixed(2);
     }
-
-    // Bill calculation logic
-    if (units <= 100) {
-        billAmount = units * 5;  // ₹5 per unit
-    } else if (units <= 300) {
-        billAmount = 100 * 5 + (units - 100) * 7;  // ₹7 per unit after 100
-    } else {
-        billAmount = 100 * 5 + 200 * 7 + (units - 300) * 10;  // ₹10 per unit after 300
-    }
-
-    // Display the bill amount
-    document.getElementById('bill-amount').textContent = billAmount.toFixed(2);
-}
-
-</script>
-<body>
-    <div class="container">
-        <h1>Electric Bill Calculator</h1>
-        <form id="bill-form">
-            <label for="units">Enter Units Consumed:</label>
-            <input type="number" id="units" name="units" required>
-
-            <button type="button" onclick="calculateBill()">Calculate Bill</button>
-        </form>
-
-        <div id="result">
-            <p>Total Bill: ₹<span id="bill-amount">0</span></p>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+  </script>
 </body>
 </html>

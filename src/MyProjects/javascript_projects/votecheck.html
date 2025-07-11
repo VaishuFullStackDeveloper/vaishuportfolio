@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vote Eligibility Checker</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1555967524-37949d0a1f4b?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      width: 320px;
+    }
+
+    .container h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #0066cc;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #0066cc;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #004e9a;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .eligible {
+      color: green;
+    }
+
+    .not-eligible {
+      color: crimson;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Vote Eligibility Checker</h1>
+    <input type="number" id="ageInput" placeholder="Enter your age" />
+    <br />
+    <button onclick="checkVote()">Check</button>
+    <div class="result" id="resultBox"></div>
+  </div>
+
+  <script>
+    function checkVote() {
+      const age = document.getElementById("ageInput").value;
+      const resultBox = document.getElementById("resultBox");
+
+      if (age === "") {
+        resultBox.innerHTML = "Please enter your age.";
+        resultBox.className = "result";
+        return;
+      }
+
+      if (age >= 18) {
+        resultBox.innerHTML = "✅ You are eligible to vote.";
+        resultBox.className = "result eligible";
+      } else {
+        resultBox.innerHTML = "❌ You are not eligible to vote.";
+        resultBox.className = "result not-eligible";
+      }
+    }
+  </script>
+</body>
+</html>
