@@ -204,6 +204,123 @@ transition-duration: 0.3s, 0.3s;
   color: #0F172A;
   transform: scale;
 }
+/* ========================= */
+/* Responsive Design Section */
+/* ========================= */
+
+/* Tablets (<= 1024px) */
+@media (max-width: 1024px) {
+  nav {
+    gap: 18px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  #home h2 {
+    font-size: 50px;
+  }
+
+  #home p {
+    font-size: 17px;
+  }
+}
+
+/* Mobile (<= 768px) */
+@media (max-width: 768px) {
+  header {
+    padding: 12px 20px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  nav {
+    display: none; 
+    flex-direction: column;
+    gap: 16px;
+    background: #111827;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  nav.active {
+    display: flex; 
+  }
+
+  .hamburger {
+    display: block; 
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  #home h2 {
+    font-size: 38px;
+  }
+
+  #home p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .social-links {
+    gap: 16px;
+  }
+
+  .social-links a {
+    font-size: 20px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Small Mobile (<= 480px) */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  #home h2 {
+    font-size: 28px;
+  }
+
+  #home p {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 8px 18px;
+  }
+
+  .social-links a {
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
 
 /* About Section */
 #about {
@@ -520,46 +637,43 @@ transition-duration: 0.3s, 0.3s;
 
 /* Project Links */
 .project-links {
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  
   position: absolute;
   bottom: 25px;
   left: 25px;
   right: 25px;
 }
 
-.project-card:hover .project-links {
-  opacity: 1;
-}
+
 
 .project-links a {
   text-decoration: none;
   padding: 10px 22px;
   border-radius: 8px;
   font-weight: 700;
-  color: #0F172A;
-  background: #34D399;
+  color: white;
+  background:#49869f ;
   box-shadow: 0 4px 6px rgba(52, 211, 153, 0.4);
   transition: 0.3s ease;
-  display: inline-block;
+ 
   font-size: 16px;
 }
 
 .project-links a:hover {
   background: #38BDF8;
-  transform: scale(1.05);
+  
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
   .project-card {
-    width: calc(50% - 20px); /* 2 per row */
+    width: calc(50% - 20px); 
   }
 }
 
 @media (max-width: 600px) {
   .project-card {
-    width: 100%; /* 1 per row */
+    width: 100%;
   }
 }
 
