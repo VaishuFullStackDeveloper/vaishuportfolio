@@ -1,211 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vaishali Dewase - Resume</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #e4e4e4;
-      line-height: 1.6;
-    }
-
-    .main-container {
-      width: 60vw;
-      margin: 30px auto;
-      display: flex;
-      border: 3px solid #000;
-      background-color: white;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      flex-direction: row;
-    }
-
-    .left-column {
-      width: 40%;
-      background-color: #605678;
-      color: white;
-      padding: 20px;
-    }
-
-    .img {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .img img {
-      width: 110px;
-      height: 130px;
-      border-radius: 10px;
-      border: 2px solid white;
-    }
-
-    .left-column hr {
-      border: 0.5px solid #ccc;
-      margin: 15px 0;
-    }
-
-    .left-column h3 {
-      margin-bottom: 8px;
-    }
-
-    .left-column p,
-    .left-column li,
-    .left-column a {
-      font-size: 14px;
-      margin-bottom: 5px;
-    }
-
-    .left-column a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .right-column {
-      width: 60%;
-      background-color: #f5f5f5;
-      padding: 20px;
-    }
-
-    .right-column h1 {
-      text-align: center;
-      color: #222;
-    }
-
-    .right-column h3 {
-      color: #384b70;
-      margin: 20px 0 5px;
-    }
-
-    .right-column p {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    .right-column ul {
-      padding-left: 20px;
-    }
-
-    .right-column li {
-      margin-bottom: 8px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .main-container {
-        width: 90vw;
-        flex-direction: column;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Two-Column Resume – Your Name</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #eef2f7;
+        --paper: #ffffff;
+        --text: #111827;
+        --muted: #6b7280;
+        --brand: #2b6cb0; /* soft blue */
+        --line: #d1d5db;
       }
 
-      .left-column,
-      .right-column {
-        width: 100%;
+      /* Page */
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+          sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.45;
       }
 
-      .img img {
-        margin: auto;
+      .page {
+        max-width: 1000px;
+        margin: 32px auto;
+        background: var(--paper);
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 0;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
       }
-    }
-  </style>
-</head>
 
-<body>
-  <div class="main-container">
-    <!-- Left Column -->
-    <div class="left-column">
-      <div class="img">
-        <img src="https://img.freepik.com/premium-vector/business-woman-character-vector-illustration_1133257-2432.jpg?semt=ais_hybrid&w=740" alt="Profile Image" />
-      </div>
+      /* Sidebar */
+      .sidebar {
+        background: #f3f4f6;
+        padding: 28px 26px;
+        border-right: 1px solid var(--line);
+      }
 
-      <hr />
+      .avatar {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: 6px auto 18px;
+        border: 6px solid #e5e7eb;
+      }
 
-      <div class="contact">
-        <h3>Contact</h3>
-        <p>📞 98********</p>
-        <p>✉️ VaishaliFullStackDeveloper@gmail.com</p>
-        <p>🔗 <a href="https://github.com/VaishaliFullStackDeveloper" target="_blank">GitHub</a></p>
-      </div>
+      .side-title {
+        font-weight: 700;
+        font-size: 22px;
+        text-align: center;
+        margin: 6px 0 16px;
+      }
 
-      <hr />
+      .info-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 10px;
+      }
+      .info-item strong {
+        display: inline-block;
+        width: 110px;
+        color: #111827;
+      }
+      .info-item span,
+      .info-item a {
+        color: #1f2937;
+        text-decoration: none;
+      }
+      .info-item a:hover {
+        text-decoration: underline;
+      }
 
-      <div class="education">
-        <h3>Education</h3>
-        <p>RTMN University, Nagpur</p>
-        <ul>
-          <li>BSc Graduation</li>
+      /* Main */
+      .main {
+        padding: 28px 34px;
+      }
+
+      .name {
+        font-size: 28px;
+        font-weight: 800;
+        color: #1f2937;
+        margin: 4px 0 4px;
+      }
+      .role {
+        color: #111827;
+        font-weight: 600;
+        margin-bottom: 18px;
+      }
+
+      .section {
+        margin: 18px 0 20px;
+      }
+      .section h3 {
+        font-size: 18px;
+        font-weight: 800;
+        margin: 0 0 10px;
+        position: relative;
+        color: #1f2937;
+      }
+      .section h3:after {
+        content: "";
+        display: block;
+        height: 3px;
+        background: linear-gradient(90deg, var(--brand), transparent);
+        margin-top: 8px;
+        border-radius: 2px;
+      }
+
+      .para {
+        margin: 0;
+        color: #1f2937;
+      }
+
+      .edu-item {
+        margin: 12px 0;
+      }
+      .edu-item b {
+        color: #111827;
+      }
+      .muted {
+        color: var(--muted);
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .tag {
+        font-size: 13px;
+        padding: 6px 10px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+      }
+
+      .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      /* header bar */
+      .headerbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 8px;
+      }
+      .contact-inline {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .btns {
+        display: flex;
+        gap: 10px;
+      }
+      .btn {
+        border: 1px solid var(--line);
+        background: #fff;
+        padding: 8px 12px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .btn:hover {
+        border-color: var(--brand);
+      }
+
+      /* Responsive */
+      @media (max-width: 860px) {
+        .page {
+          grid-template-columns: 1fr;
+        }
+        .sidebar {
+          border-right: none;
+          border-bottom: 1px solid var(--line);
+        }
+        .info-item strong {
+          width: 120px;
+        }
+        .cols {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Print (A4) */
+      @page {
+        size: A4;
+        margin: 14mm;
+      }
+      @media print {
+        body {
+          background: #fff;
+        }
+        .page {
+          box-shadow: none;
+          margin: 0;
+          border-radius: 0;
+        }
+        .btns {
+          display: none !important;
+        }
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <img
+          class="avatar"
+          src="https://media.licdn.com/dms/image/v2/D4E03AQEIUspPvPECtw/profile-displayphoto-shrink_800_800/B4EZWzIGMEGgAc-/0/1742467001466?e=1758758400&v=beta&t=67e9uH3tgQLvfNOdzdHj7uOSAZC3zsm5waFr0ZUP1i8"
+          alt="Profile Photo"
+        />
+        <div class="side-title">Personal</div>
+        <ul class="info-list">
+          <li class="info-item">
+            <strong>Name:</strong> <span>Vaishali Dewase</span>
+          </li>
+          <li class="info-item">
+            <strong>Address:</strong> <span>Katol,Maharashtra India</span>
+          </li>
+          <li class="info-item">
+            <strong>Contact:</strong> <span>+91-0000000000</span>
+          </li>
+          <li class="info-item">
+            <strong>Email:</strong> <span>vaishalidewase9.com</span>
+          </li>
+          <li class="info-item">
+            <strong>DOB:</strong> <span>05-08-2004</span>
+          </li>
+          <li class="info-item">
+            <strong>Gender:</strong> <span>Female</span>
+          </li>
+          <li class="info-item">
+            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/vaishali-dewase-29104a2b4/">linkedin.com/in/yourid</a>
+          </li>
+          <li class="info-item">
+            <strong>GitHub:</strong> <a href="https://github.com/VaishuFullStackDeveloper/vaishuportfolio">github.com/yourid</a>
+          </li>
+          <li class="info-item">
+            <strong>Portfolio:</strong> <a href="https://github.com/VaishuFullStackDeveloper/vaishuportfolio">your-portfolio.com</a>
+          </li>
         </ul>
-      </div>
+      </aside>
 
-      <hr />
+      <!-- Main -->
+      <main class="main">
+        <div class="headerbar">
+          <div>
+            <div class="name">Vaishali Dewase</div>
+            <div class="role">Full Stack Developer</div>
+          </div>
+        </div>
 
-      <div class="skills">
-        <h3>Skills</h3>
-        <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>React Native</li>
-          <li>Web Design</li>
-        </ul>
-      </div>
+        <section class="section">
+          <h3>Objective</h3>
+          <p class="para">
+            Strong believer in continuous learning, seeking a growth-oriented
+            role where I can apply my skills to build high-quality web
+            applications and contribute to a team’s success.
+          </p>
+        </section>
 
-      <hr />
+        <section class="section">
+          <h3>Educational Qualification</h3>
+          <div class="edu-item">
+            <b>Bachelor of Computer Science</b> – NMV Katol,
+            <br />
+          </div>
+          <div class="edu-item">
+            <b>HSC (PCM)</b> – B. R. Junior College, Katol ·
+          </div>
+          <div class="edu-item"><b>SSC</b> –RTMV Jamgaon·</div>
+        </section>
 
-      <div class="languages">
-        <h3>Languages</h3>
-        <ul>
-          <li>C</li>
-          <li>Java</li>
-          <li>Python</li>
-          <li>JavaScript</li>
-          <li>Swift</li>
-        </ul>
-      </div>
+        <section class="section">
+          <h3>Skills</h3>
+          <div class="cols">
+            <div>
+              <p>
+                <b>Web Development:</b> HTML, CSS, Bootstrap, JavaScript,
+                Responsive Design
+              </p>
+              <p><b>Languages Known:</b> C, C++, Python, JavaScript,SQL,</p>
+              <p><b>Tools:</b> GitHub, VS Code,Figma design</p>
+            </div>
+            <div>
+              <p><b>Helpers Known:</b> Color Hunt, Google Fonts</p>
+             
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h3>Projects (Optional)</h3>
+          <div class="edu-item">
+            <b>Portfolio Website</b> – Designed and developed a responsive
+            personal portfolio with project showcase and contact form.
+          </div>
+          <div class="edu-item">
+            <b>Mini JS Apps</b> – Created small utilities (Todo, Weather UI,
+            Calculator) focusing on clean code and usability.
+            <br>
+            <b>Website</b> 
+            <br>
+            -Agro Agency Website
+            <br>
+            -Grampanchat Website
+          </div>
+        </section>
+      </main>
     </div>
-
-    <!-- Right Column -->
-    <div class="right-column">
-      <h1>Vaishali Dewase</h1>
-      <h3 style="text-align: center;">Full Stack Developer</h3>
-
-      <div class="profile">
-        <h3>Profile</h3>
-        <hr />
-        <p>
-          Full Stack Developer with expertise in web and mobile development, including iOS. Skilled in JavaScript,
-          React, Node.js, and Python. Focused on building efficient and user-friendly solutions.
-        </p>
-      </div>
-
-      <div class="work-experience">
-        <h3>Work Experience</h3>
-        <hr />
-        <ul>
-          <li><strong>Frontend Development:</strong> HTML, CSS</li>
-          <p>Built responsive layouts using HTML and CSS. Developed UI/UX for multiple client websites.</p>
-
-          <li><strong>Middle Layer:</strong> Node.js, Express.js</li>
-          <p>Created REST APIs, handled routing, and implemented server-side logic.</p>
-
-          <li><strong>Database:</strong> SQL, PL/SQL</li>
-          <p>Worked with relational databases, created queries, and tested data integrity.</p>
-
-          <li><strong>Tools:</strong> Jira, GitHub, Postman, Figma</li>
-          <p>Used collaboration and design tools for project tracking and UI design.</p>
-
-          <li><strong>IDE:</strong> Visual Studio Code</li>
-          <p>Efficiently wrote and tested code in VS Code environment.</p>
-        </ul>
-      </div>
-    </div>
-  </div>
-</body>
-
+  </body>
 </html>
